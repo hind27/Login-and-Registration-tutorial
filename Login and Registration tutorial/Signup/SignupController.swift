@@ -15,9 +15,7 @@ class SignupController: UIViewController {
         view.backgroundColor = GREEN_THEME
         setupHaveAccountButton()
       setupTextFieldComponents()
-        // setupPasswordField()
-        //setupConfirmPassField()
-        //setupUserField()
+       
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -27,6 +25,7 @@ class SignupController: UIViewController {
         let attributedPlaceholder = NSAttributedString(string:"Email", attributes : [NSAttributedStringKey.foregroundColor:UIColor.white])
         e.setBottomBorder(backGroundColor: GREEN_THEME, borderColor: .white) // line under email
         e.attributedPlaceholder = attributedPlaceholder
+        e.textColor = .white
         e.backgroundColor = GREEN_THEME
         return e
     }()
@@ -35,6 +34,7 @@ class SignupController: UIViewController {
         let attributedPlaceholder = NSAttributedString(string:"User", attributes : [NSAttributedStringKey.foregroundColor:UIColor.white])
         y.setBottomBorder(backGroundColor: GREEN_THEME, borderColor: .white) // line under email
         y.attributedPlaceholder = attributedPlaceholder
+        y.textColor = .white
         y.backgroundColor = GREEN_THEME
         return y
     }()
@@ -42,20 +42,20 @@ class SignupController: UIViewController {
         let P = UITextField()
         let attributedPlaceholder = NSAttributedString(string:"Password", attributes : [NSAttributedStringKey.foregroundColor:UIColor.white])
         P.setBottomBorder(backGroundColor: GREEN_THEME, borderColor: .white)
+        P.attributedPlaceholder = attributedPlaceholder
         P.textColor = .white
         P.isSecureTextEntry = true
-        P.attributedPlaceholder = attributedPlaceholder
         P.backgroundColor = GREEN_THEME
         return P
     }()
      let CpasswordTextField :UITextField = {
         let cp = UITextField()
-        let attributedPlaceholder = NSAttributedString(string:"confirm Password", attributes : [NSAttributedStringKey.foregroundColor:UIColor.white])
-        cp.setBottomBorder(backGroundColor: GREEN_THEME, borderColor: .white)
-        cp.textColor = .white
-        cp.isSecureTextEntry = true
-        cp.attributedPlaceholder = attributedPlaceholder
-        cp.backgroundColor = GREEN_THEME
+        let attributedPlaceholder = NSAttributedString(string:"Confirm Password", attributes : [NSAttributedStringKey.foregroundColor:UIColor.white])
+         cp.setBottomBorder(backGroundColor: GREEN_THEME, borderColor: .white)
+         cp.attributedPlaceholder = attributedPlaceholder
+         cp.textColor = .white
+         cp.isSecureTextEntry = true
+         cp.backgroundColor = GREEN_THEME
         return cp
     }()
     let haveAccountButton: UIButton = {
@@ -85,9 +85,10 @@ class SignupController: UIViewController {
     }
     fileprivate func setupTextFieldComponents() {
         setupEmailField()
-       
-       // setupPasswordField()
         setupUserField()
+     setupPasswordField()
+      
+    setupConfirmPassField()
         
     }
     fileprivate func setupEmailField() {
@@ -112,7 +113,7 @@ class SignupController: UIViewController {
         
         passwordTextField.anchors(top: UserTextField.bottomAnchor, topPad: 8, bottom: nil,
                                   bottomPad: 0, left: UserTextField.leftAnchor, leftPad: 0,
-                                  right: UserTextField.rightAnchor, rightPad: 0, height: 10, width: 0)
+                                  right: UserTextField.rightAnchor, rightPad: 0, height: 30, width: 0)
     }
     fileprivate func setupConfirmPassField() {
         view.addSubview(CpasswordTextField)
