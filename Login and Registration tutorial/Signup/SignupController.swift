@@ -14,7 +14,7 @@ class SignupController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = GREEN_THEME
         setupHaveAccountButton()
-      setupTextFieldComponents()
+        setupTextFieldComponents()
        
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -86,9 +86,8 @@ class SignupController: UIViewController {
     fileprivate func setupTextFieldComponents() {
         setupEmailField()
         setupUserField()
-     setupPasswordField()
-      
-    setupConfirmPassField()
+        setupPasswordField()
+        setupConfirmPassField()
         
     }
     fileprivate func setupEmailField() {
