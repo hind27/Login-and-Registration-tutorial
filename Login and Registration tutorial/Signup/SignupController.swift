@@ -64,8 +64,13 @@ class SignupController: UIViewController {
         let font = UIFont.systemFont(ofSize: 16)
         let attributedTitle = NSMutableAttributedString(string:
             "I have an account ", attributes: [NSAttributedStringKey.foregroundColor: color ,NSAttributedStringKey.font : font])
-        attributedTitle.append(NSAttributedString(string:"Sing UP" ,attributes:
-            [NSAttributedStringKey.foregroundColor: UIColor.white,knjk
+        attributedTitle.append(NSAttributedString(string:"Sign in" ,attributes:
+            [NSAttributedStringKey.foregroundColor: UIColor.white,
+             NSAttributedStringKey.font: font]))
+        h.addTarget(self, action: #selector(signInAction), for: .touchUpInside)
+        h.setAttributedTitle(attributedTitle, for: .normal)
+        return h
+    }()
     
     @objc func signInAction()
     {
@@ -81,7 +86,7 @@ class SignupController: UIViewController {
     fileprivate func setupTextFieldComponents() {
         setupEmailField()
        
-        setupPasswordField()
+       // setupPasswordField()
         setupUserField()
         
     }
@@ -118,3 +123,4 @@ class SignupController: UIViewController {
     }
  
 }
+

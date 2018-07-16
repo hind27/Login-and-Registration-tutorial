@@ -54,7 +54,7 @@ class LoginController: UIViewController {
         "Don't have an account? ", attributes: [NSAttributedStringKey.foregroundColor:
             
             color ,NSAttributedStringKey.font : font])
-        attributedTitle.append(NSAttributedString(string:"Sing UP" ,attributes:
+        attributedTitle.append(NSAttributedString(string:"Sign UP" ,attributes:
             [NSAttributedStringKey.foregroundColor: UIColor.white,
              NSAttributedStringKey.font: font]))
         h.addTarget(self, action: #selector(signupAction), for: .touchUpInside)
